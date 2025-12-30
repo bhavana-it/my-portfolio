@@ -4,7 +4,7 @@ import { ThemeContext } from "./theme-context";
 const ThemeProvider = ({ children }) => {
   const getInitialTheme = () => {
     const savedTheme = localStorage.getItem("theme");
-    return savedTheme ? savedTheme : "light"; // ✅ default = light
+    return savedTheme ? savedTheme : "dark";
   };
 
   const [theme, setTheme] = useState(getInitialTheme);
