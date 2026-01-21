@@ -2,12 +2,12 @@ const Experience = () => {
   return (
     <section id="experience" className="reveal">
       <div className="container">
-        <div className="section-header">
-          <h3>My Journey</h3>
-          <p className="text-muted">
-            Career growth and impact at Graebert India Software.
-          </p>
+        <div className="section-title-row">
+          <h3 className="section-title-decorated">Resume</h3>
         </div>
+        <p className="section-subtitle">
+          Career growth and impact at Graebert India Software.
+        </p>
 
         <div className="timeline">
           <div className="timeline-item timeline-left">

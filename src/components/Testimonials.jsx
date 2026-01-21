@@ -54,12 +54,12 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="reveal">
       <div className="container">
-        <div className="section-header">
-          <h3>What They Say</h3>
-          <p className="text-muted">
-            Feedback from technical leads, managers, and stakeholders.
-          </p>
+        <div className="section-title-row">
+          <h3 className="section-title-decorated">Testimonials</h3>
         </div>
+        <p className="section-subtitle">
+          Feedback from technical leads, managers, and stakeholders.
+        </p>
 
         <div className="testimonials-slider" aria-roledescription="carousel">
           <div className="testimonials-viewport">
