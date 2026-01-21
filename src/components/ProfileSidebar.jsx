@@ -121,7 +121,7 @@ const ProfileSidebar = () => {
           </div>
         </div>
 
-        <a href="/resume.pdf" className="download-cv" download>
+        <a href="/Bhavana_Sharma_Resume.pdf" className="download-cv" download>
           <span className="download-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" width="18" height="18" focusable="false">
               <path d="M12 3v10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
