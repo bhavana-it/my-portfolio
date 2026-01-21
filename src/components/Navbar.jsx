@@ -1,12 +1,42 @@
-import { useEffect, useState } from "react";
-import ThemeToggle from "./ThemeToggle";
+import { useEffect, useState } from 'react';
 
-const Navbar = () => {
-  const [activeSection, setActiveSection] = useState("home");
+const IconMenu = ({ size = 24 }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d="M4 6h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <path d="M4 12h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <path d="M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+  </svg>
+);
+
+const IconClose = ({ size = 24 }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d="M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <path d="M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+  </svg>
+);
+
+const Navbar = ({ isDarkMode, toggleTheme }) => {
+  const [activeSection, setActiveSection] = useState("about");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const sectionIds = ["home", "about", "skills", "expertise", "experience", "projects", "services", "contact"];
+    const sectionIds = ["about", "skills", "experience", "projects", "testimonials", "contact"];
     const elements = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean);
@@ -46,49 +76,70 @@ const Navbar = () => {
   const onNavClick = () => setIsMenuOpen(false);
 
   return (
-    <nav className={`navbar ${isMenuOpen ? "navbar-open" : ""}`}>
-      <div className="container navbar-inner">
-        {/* Left: Brand */}
-        {/* <div className="navbar-brand">
-          <a href="#home" className="navbar-brand-link">
-            Bhavana<span>.</span>
-          </a>
-        </div> */}
+    <nav className="navbar">
+      <div className="navbar-container">
+        <a href="#" className="navbar-logo">
+          <span className="logo-text">BS</span>
+          <span className="logo-dot">.</span>
+        </a>
 
-        {/* Center: Menu */}
-        <ul className={`navbar-menu ${isMenuOpen ? "open" : ""}`}>
-          <li><a href="#home" className={activeSection === "home" ? "active" : ""} onClick={onNavClick}>Home</a></li>
-          <li><a href="#about" className={activeSection === "about" ? "active" : ""} onClick={onNavClick}>About</a></li>
-          <li><a href="#skills" className={activeSection === "skills" ? "active" : ""} onClick={onNavClick}>Skills</a></li>
-          <li><a href="#expertise" className={activeSection === "expertise" ? "active" : ""} onClick={onNavClick}>Expertise</a></li>
-          <li><a href="#experience" className={activeSection === "experience" ? "active" : ""} onClick={onNavClick}>Journey</a></li>
-          <li><a href="#projects" className={activeSection === "projects" ? "active" : ""} onClick={onNavClick}>Projects</a></li>
-          <li><a href="#services" className={activeSection === "services" ? "active" : ""} onClick={onNavClick}>Services</a></li>
-          <li><a href="#contact" className={activeSection === "contact" ? "active" : ""} onClick={onNavClick}>Contact</a></li>
-        </ul>
+        <button 
+          className="navbar-toggler"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-expanded={isMenuOpen}
+          aria-label="Toggle navigation"
+        >
+          {isMenuOpen ? <IconClose size={24} /> : <IconMenu size={24} />}
+        </button>
 
-        {/* Right: Actions */}
-        <div className="navbar-actions">
-          <button
-            type="button"
-            className="nav-toggle"
-            aria-label="Toggle navigation menu"
-            aria-expanded={isMenuOpen}
-            onClick={() => setIsMenuOpen((v) => !v)}
-          >
-            <span className="nav-toggle-bar" />
-            <span className="nav-toggle-bar" />
-            <span className="nav-toggle-bar" />
-          </button>
-          <ThemeToggle />
-          <a
-            href="/Bhavana_Sharma_Resume.pdf"
-            className="resume-btn"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Resume ↗
-          </a>
+        <div className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
+          <ul className="nav-links">
+            <li className="nav-item">
+              <a 
+                href="#about" 
+                className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
+                onClick={onNavClick}
+              >
+                About
+              </a>
+            </li>
+            <li className="nav-item">
+              <a 
+                href="#skills" 
+                className={`nav-link ${activeSection === 'skills' ? 'active' : ''}`}
+                onClick={onNavClick}
+              >
+                Skills
+              </a>
+            </li>
+            <li className="nav-item">
+              <a 
+                href="#experience" 
+                className={`nav-link ${activeSection === 'experience' ? 'active' : ''}`}
+                onClick={onNavClick}
+              >
+                Experience
+              </a>
+            </li>
+            <li className="nav-item">
+              <a 
+                href="#projects" 
+                className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`}
+                onClick={onNavClick}
+              >
+                Projects
+              </a>
+            </li>
+            <li className="nav-item">
+              <a 
+                href="#contact" 
+                className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
+                onClick={onNavClick}
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>

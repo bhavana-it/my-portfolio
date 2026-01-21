@@ -5,15 +5,20 @@ const Projects = () => {
   return (
     <section id="projects" className="reveal">
       <div className="container">
-        <div className="section-header">
-          <h3>Projects</h3>
-          <p className="text-muted">
-            Selected work showing end-to-end delivery, architecture, and measurable impact.
-          </p>
+        <div className="section-title-row">
+          <h3 className="section-title-decorated">Portfolio</h3>
         </div>
+        <p className="section-subtitle">
+          Selected work showing end-to-end delivery, architecture, and measurable impact.
+        </p>
 
         <div className="project-grid">
-          {projects.map((project, index) => (
+          {projects.map((project, index) => {
+            const liveLink = project?.links?.live?.trim();
+            const githubLink = project?.links?.github?.trim();
+            const caseStudyLink = project?.links?.caseStudy?.trim();
+
+            return (
             <div
               className="project-card stagger-item"
               key={project.id}
@@ -50,9 +55,9 @@ const Projects = () => {
               </div>
 
               <div className="project-actions">
-                {project?.links?.live && (
+                {liveLink && (
                   <a
-                    href={project.links.live}
+                    href={liveLink}
                     className="btn btn-outline btn-sm"
                     target="_blank"
                     rel="noreferrer"
@@ -60,9 +65,9 @@ const Projects = () => {
                     Live
                   </a>
                 )}
-                {project?.links?.github && (
+                {githubLink && (
                   <a
-                    href={project.links.github}
+                    href={githubLink}
                     className="btn btn-outline btn-sm"
                     target="_blank"
                     rel="noreferrer"
@@ -70,9 +75,9 @@ const Projects = () => {
                     GitHub
                   </a>
                 )}
-                {project?.links?.caseStudy && (
+                {caseStudyLink && (
                   <a
-                    href={project.links.caseStudy}
+                    href={caseStudyLink}
                     className="btn btn-outline btn-sm"
                     target="_blank"
                     rel="noreferrer"
@@ -82,7 +87,8 @@ const Projects = () => {
                 )}
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

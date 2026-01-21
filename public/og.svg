@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1222"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#60a5fa"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <circle cx="260" cy="170" r="190" fill="#2563eb" opacity="0.22" filter="url(#soft)"/>
+  <circle cx="980" cy="190" r="220" fill="#22c55e" opacity="0.12" filter="url(#soft)"/>
+  <circle cx="700" cy="560" r="260" fill="#a78bfa" opacity="0.10" filter="url(#soft)"/>
+
+  <rect x="70" y="80" width="1060" height="470" rx="28" fill="#0b1222" opacity="0.55" stroke="rgba(255,255,255,0.14)"/>
+
+  <text x="120" y="230" font-family="Space Grotesk, Inter, system-ui, -apple-system, Segoe UI, Arial" font-size="64" font-weight="700" fill="#e5e7eb">
+    Bhavana Sharma
+  </text>
+
+  <text x="120" y="300" font-family="Inter, system-ui, -apple-system, Segoe UI, Arial" font-size="34" font-weight="600" fill="#60a5fa">
+    Full Stack Developer
+  </text>
+
+  <text x="120" y="370" font-family="Inter, system-ui, -apple-system, Segoe UI, Arial" font-size="28" font-weight="500" fill="#9ca3af">
+    Scalable web applications • Clean architecture • Performance
+  </text>
+
+  <rect x="120" y="420" width="260" height="56" rx="18" fill="url(#g)" opacity="0.22"/>
+  <text x="145" y="458" font-family="Inter, system-ui, -apple-system, Segoe UI, Arial" font-size="22" font-weight="700" fill="#e5e7eb">
+    bhavana-it.netlify.app
+  </text>
+</svg>

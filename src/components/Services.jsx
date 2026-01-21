@@ -5,7 +5,7 @@ const Services = () => {
         <div className="section-header">
           <h3>Services</h3>
           <p className="text-muted">
-            What I can help you build, improve, and ship.
+            How I help teams ship high-quality software — and how I can help you.
           </p>
         </div>
 
@@ -13,7 +13,7 @@ const Services = () => {
           <div className="card stack-card services-card">
             <h4>Frontend Engineering</h4>
             <p className="text-muted">
-              Build modern, responsive interfaces that are fast, accessible, and easy to maintain.
+              Deliver polished, responsive UIs with reusable components, accessibility best practices, and performance in mind.
             </p>
             <div className="services-pill-row" aria-label="Frontend deliverables">
               <span className="services-pill">Responsive UI</span>
@@ -26,7 +26,7 @@ const Services = () => {
           <div className="card stack-card services-card">
             <h4>Backend & APIs</h4>
             <p className="text-muted">
-              Design secure, scalable services and APIs with clear contracts and predictable behavior.
+              Build secure APIs and backend services with clear contracts, validation, and robust error handling.
             </p>
             <div className="services-pill-row" aria-label="Backend deliverables">
               <span className="services-pill">REST APIs</span>
@@ -39,7 +39,7 @@ const Services = () => {
           <div className="card stack-card services-card">
             <h4>Performance & Reliability</h4>
             <p className="text-muted">
-              Improve speed and stability through profiling, optimization, and clean architecture.
+              Improve speed and stability through profiling, query tuning, refactoring, and production-focused practices.
             </p>
             <div className="services-pill-row" aria-label="Performance deliverables">
               <span className="services-pill">Query optimization</span>
